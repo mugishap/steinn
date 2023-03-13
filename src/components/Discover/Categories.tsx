@@ -23,7 +23,6 @@ const Categories = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  console.log(categories);
 
   return (
     <div className='w-full flex flex-col'>

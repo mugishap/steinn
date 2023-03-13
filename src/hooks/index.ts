@@ -8,9 +8,7 @@ export const useNewReleases = async (setLoading: Function, dispatch: Dispatch) =
     try {
         const request = await api.get("/browse/new-releases")
         const response = request.data
-        console.log(response)
         dispatch(setNewReleases(response))
-        setLoading(false)
     } catch (error: any) {
         console.log(error);
         toast.error(error.message)
@@ -21,9 +19,7 @@ export const useFeaturedPlaylists = async (setLoading: Function, dispatch: Dispa
     try {
         const request = await api.get("/browse/featured-playlists")
         const response = request.data
-        console.log(response);
         dispatch(setFeaturedPlaylists(response))
-        setLoading(false)
     } catch (error: any) {
         console.log(error);
         toast.error(error.message)
@@ -35,7 +31,6 @@ export const useCategories = async (setLoading: Function, dispatch: Dispatch) =>
         const request = await api.get("/browse/categories")
         const response = request.data
         dispatch(setCategories(response))
-        setLoading(false)
     } catch (error: any) {
         console.log(error);
         toast.error(error.message)
@@ -56,6 +51,7 @@ export const useToken = async () => {
         })
         const response = request.data
         localStorage.setItem("access_token", response.access_token)
+        window.location.reload()
     } catch (error: any) {
         console.log(error);
         toast.error(error.message)

@@ -22,7 +22,6 @@ const NewReleases = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  console.log(newReleases);
 
   return (
     <div className='w-full flex flex-col'>

@@ -14,9 +14,9 @@ const Discover = () => {
           <img src={music} className="max-h-full" alt="" />
         </div>
         <span className='flex flex-col mr-8 items-end'>
-          <span className='text-4xl font-bold my-4'>Your favorite tunes</span>
-          <span className='flex items-center text-3xl'>
-            All <RiSunFill className='mx-2' color='yellow' size={40} /> and all <RiMoonFill className='mx-2' size={40} />
+          <span className='text-2xl md:text-4xl font-bold my-4'>Your favorite tunes</span>
+          <span className='text-xl flex items-center md:text-3xl'>
+            All <RiSunFill className='text-xl md:text-4xl mx-2' color='yellow' /> and all <RiMoonFill className='text-xl md:text-4xl mx-2' />
           </span>
         </span>
       </div>

@@ -10,16 +10,24 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useCategories, useFeaturedPlaylists, useNewReleases, useToken } from "./hooks"
 import { useDispatch, useSelector } from "react-redux"
+import { RiLoader2Line, RiLoaderFill, RiLoaderLine } from "react-icons/ri"
 
 function App() {
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
+
+  const getSongs = async () => {
+
+    if (!localStorage.getItem('access_token'))  await useToken()
+    await useNewReleases(setLoading, dispatch)
+    await useFeaturedPlaylists(setLoading, dispatch)
+    await useCategories(setLoading, dispatch)
+    setLoading(false)
+  }
+
   const dispatch = useDispatch()
   useEffect(() => {
-    useToken()
-    useNewReleases(setLoading, dispatch)
-    useFeaturedPlaylists(setLoading, dispatch)
-    useCategories(setLoading, dispatch)
+    getSongs()
   }, [])
 
   const newReleases = useSelector((state: any) => state.songs.newReleases)
@@ -33,7 +41,12 @@ function App() {
       categories
     }}>
       <ToastContainer theme="colored" position="top-right" hideProgressBar={true} />
-      <Pages />
+      {loading ?
+        <span>
+          <RiLoaderFill />
+        </span>
+        :
+        <Pages />}
     </CommonContext.Provider>
   )
 }

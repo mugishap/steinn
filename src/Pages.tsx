@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import CommonComponent from './components/Common/CommonComponent'
+import NotFound from './pages/404/NotFound'
 import Charts from './pages/Charts/Charts'
 import Discover from './pages/Discover/Discover'
 import Favorites from './pages/Favorites/Favorites'
@@ -19,6 +20,7 @@ const Pages = () => {
                     <Route path='/favorites' element={<Favorites />}></Route>
                     <Route path='/playlists' element={<Playlists />}></Route>
                     <Route path='/charts' element={<Charts />}></Route>
+                    <Route path='*' element={<NotFound />}></Route>
                 </Routes>
             </CommonComponent>
         </BrowserRouter>

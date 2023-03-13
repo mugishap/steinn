@@ -22,7 +22,6 @@ const FeaturedPlaylists = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  console.log(featuredPlaylists);
 
   return (
     <div className='w-full flex flex-col'>
