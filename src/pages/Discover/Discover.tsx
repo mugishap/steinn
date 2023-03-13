@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { RiMoonFill, RiSunFill } from 'react-icons/ri'
 import NewReleases from '../../components/Discover/NewReleases'
-import Categories from './Categories'
-import FeaturedPlaylists from './FeaturedPlaylists'
+import FeaturedPlaylists from '../../components/Discover/FeaturedPlaylists'
 import music from "./../../assets/music.svg"
+import Categories from '../../components/Discover/Categories'
 
 const Discover = () => {
+
   return (
     <div className='w-full flex flex-col items-center justify-start h-full overflow-y-scroll'>
       <div className='bg-pink-400/50 h-[25%] w-full flex items-center justify-between px-8'>
-        <div className='py-3 h-full'>
+        <div className='py-3 md:flex hidden h-full'>
           <img src={music} className="max-h-full" alt="" />
         </div>
         <span className='flex flex-col mr-8 items-end'>
