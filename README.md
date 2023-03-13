@@ -81,7 +81,7 @@ Access `http://localhost:30000` to view the app
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/mugishap) - Development
+- [@mugishap](https://github.com/mugishap) - Development
 
 See also the list of [contributors](https://github.com/mugishap/steinn/contributors) who participated in this project.
 
