@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useCategories, useFeaturedPlaylists, useNewReleases, useToken } from "./hooks"
 import { useDispatch, useSelector } from "react-redux"
-import { RiLoader2Line, RiLoaderFill, RiLoaderLine } from "react-icons/ri"
+import { RiLoader2Line, RiLoader4Fill, RiLoaderFill, RiLoaderLine } from "react-icons/ri"
 
 function App() {
 
@@ -42,9 +42,12 @@ function App() {
     }}>
       <ToastContainer theme="colored" position="top-right" hideProgressBar={true} />
       {loading ?
-        <span>
-          <RiLoaderFill />
+      <div className="w-screen h-screen flex items-center justify-center">
+        <span className="flex flex-col items-center justify-center">
+          <RiLoader4Fill className="animate-spin text-spotify-purple text-4xl" />
+          <span>Loading...</span>
         </span>
+      </div>
         :
         <Pages />}
     </CommonContext.Provider>
